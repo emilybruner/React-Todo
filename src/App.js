@@ -24,7 +24,7 @@ class App extends React.Component {
     super();
     this.state = {
       todos: todos,
-      anotherOne: ''
+      task: ''
     };
   }
 
@@ -44,8 +44,8 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm />
-        <TodoList />
+        <TodoForm addItem={this.addItem} />
+        <TodoList todos={this.state.todos} />
       </div>
     );
   }
