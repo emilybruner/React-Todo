@@ -40,11 +40,6 @@ class App extends React.Component {
     });
   };
 
-  handleChanges = e => {
-    this.setState({ newItem: e.target.value });
-  };
-
-
 
   toggleCompleted = id => {
     this.setState({
@@ -62,7 +57,6 @@ class App extends React.Component {
   }
 
   deleteTask = e => {
-    e.preventDefault();
     this.setState({
       todos: this.state.todos.filter(task => {
         return !task.completed
