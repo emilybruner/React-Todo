@@ -4,13 +4,16 @@ class TodoForm extends React.Component {
     constructor() {
         super();
         this.state = {
-            data: ''
+            newItem: '',
+            id: Date.now(),
+            completed: false
         };
     }
 
     handleChanges = e => {
         this.setState({ newItem: e.target.value });
     };
+
 
     handleSubmit = e => {
         e.preventDefault();

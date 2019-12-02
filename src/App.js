@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import '../src/components/TodoComponents/Todo.css';
 
 
 const todos = [
@@ -39,6 +40,12 @@ class App extends React.Component {
     });
   };
 
+  handleChanges = e => {
+    this.setState({ newItem: e.target.value });
+  };
+
+
+
   toggleCompleted = id => {
     this.setState({
       todos: this.state.todos.map(item => {
@@ -69,7 +76,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoForm addItem={this.addItem} />
+        <TodoForm value={this.state.task} handleChange={this.handleChanges} addItem={this.addItem} />
         <TodoList toggleCompleted={this.toggleCompleted} todos={this.state.todos} deleteTask={this.deleteTask} />
       </div>
     );
