@@ -31,6 +31,7 @@ class TodoForm extends React.Component {
                     task="item"
                 />
                 <button>Add</button>
+                <button>Clear Completed</button>
             </form>
         );
     }
