@@ -4,7 +4,7 @@ class TodoForm extends React.Component {
     constructor() {
         super();
         this.state = {
-            newItem: ''
+            data: ''
         };
     }
 
@@ -20,6 +20,7 @@ class TodoForm extends React.Component {
         });
     };
 
+
     render() {
         console.log('rendering form');
         return (
@@ -31,9 +32,9 @@ class TodoForm extends React.Component {
                     task="item"
                 />
                 <button>Add</button>
-                <button>Clear Completed</button>
+
             </form>
-        );
+        )
     }
 }
 
