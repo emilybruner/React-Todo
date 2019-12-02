@@ -30,7 +30,7 @@ class App extends React.Component {
 
   addItem = newTodoText => {
     const newItem = {
-      task: newTodoText.App,
+      task: newTodoText,
       id: Date.now(),
       completed: false
     };
@@ -39,13 +39,27 @@ class App extends React.Component {
     });
   };
 
+  toggleCompleted = id => {
+    this.setState({
+      todos: this.state.todos.map(item => {
+        if (item.id === id) {
+          return {
+            ...item,
+            completed: !item.completed
+          };
+        } else {
+          return item;
+        }
+      })
+    })
+  }
   render() {
     console.log('rendering...');
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addItem={this.addItem} />
-        <TodoList todos={this.state.todos} />
+        <TodoList toggleCompleted={this.toggleCompleted} todos={this.state.todos} />
       </div>
     );
   }
