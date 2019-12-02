@@ -6,11 +6,11 @@ import Todo from './Todo';
 
 const TodoList = props => {
     return (
-        <div>
+        <div className="list">
             {props.todos.map(task => {
                 return <Todo key={task.id} item={task} toggleCompleted={props.toggleCompleted} />
             })}
-            <button onClick={props.deleteTask}>Clear Completed</button>
+            <button className="delete-btn" onClick={props.deleteTask}>Clear Completed</button>
         </div>
     );
 };
